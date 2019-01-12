@@ -1,16 +1,14 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SadConsole
+﻿namespace SadConsole
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+
     public partial class Game
     {
         public class SadConsoleGameComponent : DrawableGameComponent
         {
-            internal SadConsoleGameComponent(Game game) : base(game)
+            internal SadConsoleGameComponent(Microsoft.Xna.Framework.Game game) 
+                : base(game)
             {
                 DrawOrder = 5;
                 UpdateOrder = 5;
