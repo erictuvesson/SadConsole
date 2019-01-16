@@ -17,9 +17,10 @@
         /// </summary>
         public event EventHandler WindowResized;
 
+        public int ConsoleWidth { get; private set; }
+        public int ConsoleHeight { get; private set; }
+
         private string font;
-        private int consoleWidth;
-        private int consoleHeight;
 
         protected Application(string font, int consoleWidth, int consoleHeight)
         {
@@ -28,8 +29,8 @@
             Content.RootDirectory = "Content";
 
             this.font = font;
-            this.consoleHeight = consoleHeight;
-            this.consoleWidth = consoleWidth;
+            this.ConsoleHeight = consoleHeight;
+            this.ConsoleWidth = consoleWidth;
 
             IsMouseVisible = true;
 
@@ -73,7 +74,7 @@
                 Global.FontDefault = Global.LoadFont(font).GetFont(Font.FontSizes.One);
             }
 
-            Global.FontDefault.ResizeGraphicsDeviceManager(GraphicsDeviceManager, consoleWidth, consoleHeight, 0, 0);
+            Global.FontDefault.ResizeGraphicsDeviceManager(GraphicsDeviceManager, ConsoleWidth, ConsoleHeight, 0, 0);
             Global.ResetRendering();
 
             Global.CurrentScreen = new ContainerConsole();
